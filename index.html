@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GFCTech Form</title>
+    <title>GFCTech | Plataforma para gestão de eventos</title>
+    <meta name="description" content="Crie, divulgue e gerencie cursos e eventos com a plataforma da GFCTech.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,46 +13,48 @@
 </head>
 
 <body>
-    <nav class="navbar">
-      <div class="navbar-logo">
-        <img src="logosteste/LOGOGFC.png" alt="Logo">
-      </div>
+    <nav class="navbar" aria-label="Navegação principal">
+      <a class="navbar-logo" href="#" aria-label="GFCTech - início">
+        <img src="logosteste/LOGOGFC.png" alt="GFCTech">
+      </a>
+      <a class="nav-cta" href="#contato">Fale com um consultor</a>
     </nav>
     <section class="header">
+      <div class="header-inner">
         <div class="header-text">
-          <h1>Plataforma para <br>gestão de eventos <br>aprovada pelo <br>mercado</h1>
-          <p class="texto">
-            <span class="plus"><strong>+</strong></span> 36 mil organizadores de cursos e eventos<br>
-            <span class="plus">+</span> 90 mil cursos e eventos realizados<br>
-            <span class="plus">+</span> 3 milhões de inscrições realizadas<br>
-            <span class="plus">+</span> Aqui você tem mais rentabilidade<br>
-            <span class="plus">+</span> O atendimento mais rápido do mercado<br>
-            <span class="plus">+</span> 20 anos de mercado e experiência para te ajudar!
-        </p>        
+          <span class="eyebrow">Plataforma completa para organizadores</span>
+          <h1>Sua próxima edição começa com menos burocracia.</h1>
+          <p class="hero-description">Crie inscrições, organize participantes e gerencie seus cursos e eventos em uma única plataforma.</p>
+          <div class="metrics" aria-label="Números da plataforma">
+            <div><strong>36 mil+</strong><span>organizadores</span></div>
+            <div><strong>90 mil+</strong><span>eventos realizados</span></div>
+            <div><strong>3 milhões+</strong><span>inscrições</span></div>
+          </div>
         </div>
-    <div class="formulario">
-    <form  id="emailForm" action="/pagina-processa-dados-do-form" method="post">
-        <h4>Preencha somente se você organiza eventos e precisa de ajuda de um consultor!</h4>
+        <div class="formulario" id="contato">
+    <form id="emailForm" action="/pagina-processa-dados-do-form" method="post">
+        <span class="form-kicker">Consultoria gratuita</span>
+        <h4>Vamos falar sobre seu próximo evento?</h4>
         <div>
           <label for="nome">Nome*</label>
-          <input type="text" style="color: #4F4F4F;" id="nome" name="nome"/>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome" required/>
         </div>
         <div>
           <label for="email">E-mail*</label>
-          <input type="email" id="email" name="email"/>
+          <input type="email" id="email" name="email" placeholder="voce@empresa.com" required/>
         </div>
         <div>
           <label for="fone">Celular*</label>
-          <input type="tel" id="telefone" name="telefone"/>
+          <input type="tel" id="telefone" name="telefone" required/>
         </div>
         <div>
           <label for="evento">Nome da Organização/Evento*</label>
-          <input type="text" id="nomeevento" name="nomeevento"/>
+          <input type="text" id="nomeevento" name="nomeevento" placeholder="Nome da organização" required/>
         </div>
         <div>
           <label for="seletorinscricao">Quando você pretende abrir as inscrições do seu próximo evento ou curso?*</label>
-          <select name="inscricao" id="inscricao">
-            <option value="Selecione">Selecione</option>
+          <select name="inscricao" id="inscricao" required>
+            <option value="">Selecione</option>
             <option value="Não tenho essa definição">Não tenho essa definição</option>
             <option value="Imediatamente">Imediatamente</option>
             <option value="Em um mês">Em um mês</option>
@@ -64,31 +67,32 @@
         <div>
           <label for="radiotext">Você organiza eventos?*</label>
           <label class="container">Sim, sou organizador(a) de eventos!
-            <input type="radio" checked="checked" name="radio">
+            <input type="radio" checked="checked" name="radio" value="Sim">
             <span class="checkmark"></span>
           </label>
           <label class="container">Não, não sou organizador(a) de eventos!
-            <input type="radio" name="radio">
+            <input type="radio" name="radio" value="Não">
             <span class="checkmark"></span>
           </label>
         </div>
         <div>
           <label for="soma">11 + 5 = ?*</label>
-          <input type="text" id="soma" name="nomeevento"/>
+          <input type="text" id="soma" name="soma" inputmode="numeric" required/>
         </div>
     
         <div class="button">
-            <button type="submit">Confirmar inscrição</button>
+            <button type="submit">Quero falar com um consultor</button>
         </div>
       </form>
-      <p id="resultMessage"></p>
-
+      <p id="resultMessage" role="status"></p>
     </div>
+      </div>
   </section>
 
 
   <section class="clients">
-    <h2>Alguns Clientes:</h2>
+    <span class="section-kicker">Quem confia na GFCTech</span>
+    <h2>Organizações que transformam conhecimento em experiências</h2>
     <div class="img-clients">
         <div class="logos">
             <img src="logosteste/logo1.png" alt="logo 1">
@@ -108,28 +112,32 @@
 
 
   <section class="steps">
-    <h2>Em poucos minutos você já pode<br> divulgar e organizar seu evento de<br> maneira eficiente</h2>
+    <span class="section-kicker">Rápido e sem complicação</span>
+    <h2>Seu evento pronto em poucos minutos</h2>
     <div class="imagens-steps">
-      <img src="logosteste/01.png" alt="img-01">
-      <img src="logosteste/02.png" alt="img-02">
-      <img src="logosteste/03.png" alt="img-03">
-  </div>
+      <article><img src="logosteste/01.png" alt="Cadastro do evento"><span>01</span><h3>Crie seu evento</h3></article>
+      <article><img src="logosteste/02.png" alt="Configuração das inscrições"><span>02</span><h3>Configure as inscrições</h3></article>
+      <article><img src="logosteste/03.png" alt="Divulgação do evento"><span>03</span><h3>Divulgue e venda</h3></article>
+    </div>
   <div class="button-steps">
-    <button type="submit">QUERO CONHECER!</button>
+    <a href="#contato" class="button-link">QUERO CONHECER</a>
   </div>
   </section>
 
   <section class="penultima">
-    <h1>Tenha a maior rentabilidade em seus eventos!</h1>
+    <span class="section-kicker">Planos transparentes</span>
+    <h1>Mais rentabilidade para seus eventos</h1>
     <div class="content">
       <div class="box1">
         <h2>CURSOS E EVENTOS PAGOS</h2>
-        <P>Utilize toda a plataforma com<strong> Custo Zero</strong></P>
+        <P>Utilize toda a plataforma com <strong>custo zero</strong></P>
+        <span class="price-note">Sem mensalidade</span>
       </div>
       <div class="box">
         <h2>CURSOS E EVENTOS PAGOS</h2>
-        <p><strong>35,9% apenas pelas</strong> inscrições confirmadas.</p>
-        <p> ➤ Você só terá custo se a inscrição for confirmada, sem <br> pegadinhas!</p>
+        <p><strong>A partir de 35,9%</strong> sobre inscrições confirmadas.</p>
+        <p>Você só paga quando a inscrição é confirmada.</p>
+        <span class="price-note">Sem custo inicial</span>
       </div>
     </div>
   </section>

@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
   form.addEventListener("submit", async (event) => {
     event.preventDefault(); // Prevenir o comportamento padrão de envio do formulário
 
+    if (document.querySelector("#soma").value.trim() !== "16") {
+      document.querySelector("#resultMessage").textContent = "Confirme o resultado da soma para continuar.";
+      document.querySelector("#soma").focus();
+      return;
+    }
+
     const formData = new FormData(form);
     const phoneNumber = iti.getNumber(); // Captura o número completo com o código do país
 
